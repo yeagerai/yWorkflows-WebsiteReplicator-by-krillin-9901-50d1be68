@@ -1,0 +1,5 @@
+description: 'This component performs tests on the replica skeleton using ''skeleton_url''
+  as input, ensuring it has been properly created and provides an overall status of
+  the replica. Output({''replica_url'': str, ''replica_status'': str}).'
+name: TestReplica
+parameters: {}
