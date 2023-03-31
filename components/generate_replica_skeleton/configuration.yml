@@ -1,0 +1,6 @@
+description: This component uses the list of 'technologies' received from the FetchTechnologies
+  component, generates the replica skeleton based on the technology stack, and sets
+  up the development environment accordingly.
+name: GenerateReplicaSkeleton
+parameters:
+  skeleton_templates_path: ./skeleton_templates
