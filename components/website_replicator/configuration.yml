@@ -1,0 +1,6 @@
+description: The WebsiteReplicator is a Yeager Workflow designed to create a replica
+  of a target website and provide its replica's URL and status. This workflow receives
+  an input with the target website's URL and produces an output with the replica's
+  URL and its status.
+name: WebsiteReplicator
+parameters: {}
