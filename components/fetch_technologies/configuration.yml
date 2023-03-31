@@ -1,0 +1,6 @@
+description: 'This component sends a request to the builtwith.com API to the provided
+  ''target_website'' and retrieves the technology stack information. Output({''technologies'':
+  List[str]}).'
+name: FetchTechnologies
+parameters:
+  api_key: YOUR_API_KEY_HERE
