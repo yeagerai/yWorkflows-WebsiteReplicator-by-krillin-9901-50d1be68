@@ -1,0 +1,28 @@
+yaml
+components:
+  node-0:
+      class: FetchTechnologies
+      module-path: components/fetch_technologies/fetch_technologies.py
+      configuration: !include components/fetch_technologies/configuration.yml
+  node-1:
+      class: GenerateReplicaSkeleton
+      module-path: components/generate_replica_skeleton/generate_replica_skeleton.py
+      configuration: !include components/generate_replica_skeleton/configuration.yml
+  node-2:
+      class: TestReplica
+      module-path: components/test_replica/test_replica.py
+      configuration: !include components/test_replica/configuration.yml
+
+flow-matrix:
+  [
+      [0, 1, 0],
+      [0, 0, 1],
+      [0, 0, 0]
+  ]
+
+mapper:
+  node-0.FetchTechnologies.target_website: input.target_website
+  node-1.GenerateReplicaSkeleton.technologies: node-0.FetchTechnologies.technologies
+  node-2.TestReplica.skeleton_url: node-1.GenerateReplicaSkeleton.skeleton_url
+  output.replica_url: node-2.TestReplica.replica_url
+  output.replica_status: node-2.TestReplica.replica_status
